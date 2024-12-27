@@ -1,0 +1,87 @@
+[
+    {
+      "id": 1,
+      "slug": "career-counseling-sessions",
+      "icon": "https://cdn-icons-png.freepik.com/256/14646/14646654.png?semt=ais_hybrid",
+      "image": "https://www.acs.edu.au/database/images/course_3190544.jpg",
+      "serviceName": "Career Counseling Sessions",
+      "category": "online",
+      "description": "Personalized career guidance to help you find the right path and make informed career decisions.",
+      "pricing": "$50 per session",
+      "duration": "05-12-24 5:00-6:00pm",
+      "counselor": "John Doe",
+      "rating": 4.5,
+      "learnMoreLink": "/services/career-counseling"
+    },
+    {
+      "id": 2,
+      "slug": "resume-review",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2125/2125395.png",
+      "image": "https://adriancareerresume.com/cdn/shop/products/resume-review-586465.png?v=1701538076",
+      "serviceName": "Resume Review",
+      "category": "online",
+      "description": "Get expert feedback on your resume to improve your chances of landing your dream job.",
+      "pricing": "$30 per review",
+      "duration": "06-12-24 3:00-4:00pm",
+      "counselor": "Jane Smith",
+      "rating": 4.7,
+      "learnMoreLink": "/services/resume-review"
+    },
+    {
+      "id": 3,
+      "slug": "interview-coaching",
+      "icon": "https://cdn-icons-png.flaticon.com/512/7039/7039285.png",
+      "image": "https://theprovengroup.com.au/wp-content/uploads/2018/11/interview-coaching-practice-makes-perfect.jpg",
+      "serviceName": "Interview Coaching",
+      "category": "offline",
+      "description": "Prepare for interviews with mock sessions and feedback to improve your confidence and skills.",
+      "pricing": "$75 per session",
+      "duration": "07-12-24 10:00-11:00am",
+      "counselor": "Alice Johnson",
+      "rating": 4.8,
+      "learnMoreLink": "/services/interview-coaching"
+    },
+    {
+      "id": 4,
+      "slug": "career-development-workshops",
+      "icon": "https://cdn-icons-png.flaticon.com/512/11421/11421728.png",
+      "image": "https://dfwi.ca/wp-content/uploads/2024/05/CllPy0DFFr8.jpg",
+      "serviceName": "Career Development Workshops",
+      "category": "group",
+      "description": "Join a group session for career development tips, resume building, and job search strategies.",
+      "pricing": "$40 per person",
+      "duration": "10-12-24 1:00-3:00pm",
+      "counselor": "Mark Brown",
+      "rating": 4.3,
+      "learnMoreLink": "/services/career-workshops"
+    },
+    {
+      "id": 5,
+      "slug": "career-guidance-planning",
+      "icon": "https://cdn-icons-png.flaticon.com/512/888/888960.png",
+      "image": "https://aaftonline.com/blog/wp-content/uploads/2024/08/The-Role-of-Career-Counselling-in-Career-Development-and-Planning.jpg",
+      "serviceName": "Career Guidance and Planning",
+      "category": "online",
+      "description": "Get tailored career guidance and planning based on your strengths, interests, and career goals.",
+      "pricing": "$55 per session",
+      "duration": "09-12-24 4:00-5:00pm",
+      "counselor": "Michael Clark",
+      "rating": 4.6,
+      "learnMoreLink": "/services/career-guidance"
+    },
+    {
+      "id": 6,
+      "slug": "job-search-coaching",
+      "icon": "https://cdn-icons-png.flaticon.com/512/8478/8478378.png",
+      "image": "https://static.wixstatic.com/media/11062b_3300e7a133ed48068b50d29cf6e3cfc9~mv2.jpg/v1/fill/w_640,h_344,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3300e7a133ed48068b50d29cf6e3cfc9~mv2.jpg",
+      "serviceName": "Job Search Coaching",
+      "category": "online",
+      "description": "Learn effective job search strategies, how to network, and how to land your next opportunity.",
+      "pricing": "$40 per session",
+      "duration": "11-12-24 2:00-3:00pm",
+      "counselor": "Emily Davis",
+      "rating": 4.4,
+      "learnMoreLink": "/services/job-search-coaching"
+    }
+  ]
+  

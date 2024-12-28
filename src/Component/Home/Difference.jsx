@@ -12,19 +12,12 @@ const Difference = () => {
     <div>
       <div className=";g:w-4/12 mx-auto my-12 h-24 text-center">
         <h1 className="text-2xl font-bold ">What Sets Us Apart</h1>
-        <ReactTyped
-          strings={["Discover the SetMyCareer Difference"]}
-          cursorChar=""
-          typeSpeed={40}
-          backSpeed={30}
-          backDelay={2000}
-          loop
-          className=" md:text-2xl lg:text-4xl font-extrabold text-primary"
-        ></ReactTyped>
+        <h1 className="md:text-2xl lg:text-4xl font-extrabold text-primary">Discover the SetMyCareer Difference</h1>
+        
       </div>
       <div className="mb-12">
         <div className=" grid lg:grid-cols-3 gap-6 grid-rows-2">
-          <div  data-aos="fade-right" className="  col-span-1 row-span-1 flex justify-end">
+          <div  className="  col-span-1 row-span-1 flex justify-end">
             <div className="text-right space-y-2">
               <button className="bg-primary text-white p-4 rounded-xl text-2xl">
                 <FaClock></FaClock>
@@ -38,7 +31,7 @@ const Difference = () => {
               </p>
             </div>
           </div>
-          <div data-aos="fade-down" className="col-span-1 row-span-2 h-full w-full">
+          <div  className="col-span-1 row-span-2 h-full w-full">
             <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/DIFCMtzg7xg?si=yq7HyYwt6sObL-ar"
@@ -50,7 +43,7 @@ const Difference = () => {
             ></iframe>
           </div>
 
-          <div  data-aos="fade-left" className="">
+          <div   className="">
             <button className="bg-primary text-white p-4 rounded-xl text-2xl">
               <GiSunflower />
             </button>
@@ -62,7 +55,7 @@ const Difference = () => {
               confidence and clarity.
             </p>
           </div>
-          <div data-aos="fade-right" className="  text-right">
+          <div  className="  text-right">
             <button className="bg-primary text-white p-4 rounded-xl text-2xl">
               <FaRegFilePdf></FaRegFilePdf>
             </button>
@@ -74,7 +67,7 @@ const Difference = () => {
               Psychometric Assessments.
             </p>
           </div>
-          <div  data-aos="fade-left" className="">
+          <div   className="">
             <button className="bg-primary text-white p-4 rounded-xl text-2xl">
               <FaPeopleGroup></FaPeopleGroup>
             </button>

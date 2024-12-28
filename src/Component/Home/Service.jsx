@@ -19,7 +19,7 @@ const Service = ({ data }) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-7 ">
         {data.map((item) => (
-          <div data-aos="zoom-in-up" className="bg-green-100 shadow-lg flex flex-col p-12 rounded-lg">
+          <div className="bg-green-100 shadow-lg flex flex-col p-12 rounded-lg">
             <div className="">
               <img className="h-52 w-full rounded-xl" src={item.image} alt="" />
             </div>

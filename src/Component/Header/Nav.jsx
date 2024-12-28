@@ -7,28 +7,28 @@ import toast from "react-hot-toast";
 const Nav = () => {
   const { user, logout } = useContext(AuthUserContext);
   const navigate = useNavigate();
-
-  // State to toggle mobile menu visibility
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
 
   const handleLogout = () => {
     logout()
-      .then((result) => {
+      .then(() => {
         toast.success("Successfully Logout");
         navigate("/login");
       })
-      .catch((error) => {
+      .catch(() => {
         toast.error("Something went wrong");
       });
   };
 
   return (
     <div className="bg-[#091E3E]">
-      <div className="mx-auto w-full max-w-[1600px] text-white flex justify-between items-center px-4 ">
+      <div className="mx-auto w-full max-w-[1600px] text-white flex justify-between items-center px-4">
         {/* Logo */}
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-expanded={menuOpen}
             className="text-white focus:outline-none"
           >
             <svg
@@ -48,19 +48,17 @@ const Nav = () => {
           </button>
         </div>
         <div className="hidden md:inline-block">
-          <Link to='/'><img className="h-20 w-28" src={logo} alt="Logo" /></Link>
+          <Link to="/">
+            <img className="h-20 w-28" src={logo} alt="Logo" />
+          </Link>
         </div>
 
         {/* Desktop Navigation links */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `${
-                isActive
-                  ? "border-b-4 border-white"
-                  : "hover:border-b-4 border-white"
-              }`
+              `${isActive ? "border-b-4 border-white" : "hover:border-b-4 border-white"}`
             }
           >
             Home
@@ -68,36 +66,23 @@ const Nav = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              `${
-                isActive
-                  ? "border-b-4 border-white"
-                  : "hover:border-b-4 border-white"
-              }`
+              `${isActive ? "border-b-4 border-white" : "hover:border-b-4 border-white"}`
             }
           >
             About Us
           </NavLink>
-
           <NavLink
             to="/class"
             className={({ isActive }) =>
-              `${
-                isActive
-                  ? "border-b-4 border-white"
-                  : "hover:border-b-4 border-white"
-              }`
+              `${isActive ? "border-b-4 border-white" : "hover:border-b-4 border-white"}`
             }
           >
-           Class
+            Class
           </NavLink>
           <NavLink
             to="/profile"
             className={({ isActive }) =>
-              `${
-                isActive
-                  ? "border-b-4 border-white"
-                  : "hover:border-b-4 border-white"
-              }`
+              `${isActive ? "border-b-4 border-white" : "hover:border-b-4 border-white"}`
             }
           >
             My Profile
@@ -105,59 +90,77 @@ const Nav = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `${
-                isActive
-                  ? "border-b-4 border-white"
-                  : "hover:border-b-4 border-white"
-              }`
+              `${isActive ? "border-b-4 border-white" : "hover:border-b-4 border-white"}`
             }
           >
             Contact Us
           </NavLink>
         </div>
 
-        {/* User Avatar and Login/Logout buttons */}
-        <div className="flex items-center space-x-3 relative">
-          <div className="group relative">
-            <img
-              className="h-12 w-12 rounded-full cursor-pointer"
-              src={
-                user?.photoURL ||
-                "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg"
-              }
-              alt="User Avatar"
-            />
-            {user && (
-              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-lg bg-primary text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-                {user.displayName || "User"}
-              </span>
-            )}
-          </div>
-
-          {user ? (
-            <button
-              onClick={handleLogout}
-              className="border border-white py-2 px-5 rounded-lg font-semibold"
+        {/* User Avatar and Dropdown */}
+        <div className="relative">
+          <button
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+            className="btn btn-ghost btn-circle avatar focus:outline-none"
+          >
+            <div className="w-10 rounded-full">
+              <img
+                alt="User Avatar"
+                src={
+                  user?.photoURL ||
+                  "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg"
+                }
+              />
+            </div>
+          </button>
+          {dropdownOpen && (
+            <ul
+              className="menu menu-xl absolute right-0 bg-white text-black rounded-box mt-3 shadow-lg z-10 w-[500px]"
+              onMouseLeave={() => setDropdownOpen(false)} 
             >
-              Logout
-            </button>
-          ) : (
-            <Link to="/login">
-              <button className="border border-white py-2 px-5 rounded-lg font-semibold">
-                Login
-              </button>
-            </Link>
+              <li>
+                <div className="">
+                  <div className="">
+                    <img className="h-12 w-12 rounded-full" src={user?.photoURL || ''} alt="" />
+                  </div>
+                  <div className="">
+                    <h1>{user.displayName}</h1>
+                    <p>{user?.email}</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <NavLink
+                  to="/profile"
+                  className="block py-2 px-4 hover:bg-gray-100"
+                >
+                  Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/settings"
+                  className="block py-2 px-4 hover:bg-gray-100"
+                >
+                  Settings
+                </NavLink>
+              </li>
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="block w-full text-left py-2 px-4 hover:bg-gray-100"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
           )}
         </div>
-
-        {/* Mobile menu icon (hamburger) */}
-        
       </div>
 
-      {/* Mobile menu */}
-      <div className="w-9/12 mx-auto">
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#091E3E] text-white px-4  space-y-4">
+        <div className="md:hidden bg-[#091E3E] text-white px-4 space-y-4">
           <NavLink
             to="/"
             className="block py-2"
@@ -175,8 +178,9 @@ const Nav = () => {
           <NavLink
             to="/class"
             className="block py-2"
+            onClick={() => setMenuOpen(false)}
           >
-           Class
+            Class
           </NavLink>
           <NavLink
             to="/profile"
@@ -193,7 +197,7 @@ const Nav = () => {
             Contact Us
           </NavLink>
 
-          {/* Login/Logout in mobile */}
+          {/* Login/Logout for mobile */}
           <div className="flex flex-col space-y-2">
             {user ? (
               <button
@@ -212,7 +216,6 @@ const Nav = () => {
           </div>
         </div>
       )}
-      </div>
     </div>
   );
 };

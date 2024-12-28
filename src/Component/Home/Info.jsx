@@ -17,7 +17,7 @@ const Info = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
         {/* Happy Clients */}
         <div
-          data-aos="fade-right"
+          
           className="bg-[#091E3E] py-10 text-center flex space-x-4 justify-center items-center text-white  shadow-lg"
         >
           <p
@@ -27,7 +27,7 @@ const Info = () => {
             <PiUsersThreeFill />
           </p>
           <div className="text-left">
-            <p className="text-2xl font-bold">Happy Clients</p>
+            <p className="text-2xl font-bold">Happy Student</p>
             <p className="text-3xl font-bold">
               <CountUp start={1} end={6024} duration={2} />
             </p>
@@ -36,7 +36,7 @@ const Info = () => {
 
         {/* Hours of Counselling */}
         <div
-          data-aos="fade-up"
+          
           className="bg-green-100 py-7 text-center flex space-x-4 justify-center items-center  shadow-lg"
         >
           <p
@@ -55,7 +55,7 @@ const Info = () => {
 
         {/* Tests Taken */}
         <div
-          data-aos="fade-left"
+          
           className="bg-[#091E3E] py-7 text-center flex space-x-4 justify-center items-center text-white  shadow-lg"
         >
           <p
